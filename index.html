@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing PS Mega Station</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Billing PS Mega Station</h1>
+        <button id="theme-toggle" class="btn">
+          <i class="fas fa-moon"></i> Mode Gelap
+        </button>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="ps-control">Kontrol PS</button>
+        <button class="tab-btn" data-tab="food-menu">Menu</button>
+      </div>
+
+      <!-- Tab Kontrol PS -->
+      <div id="ps-control" class="tab-content active">
+        <div class="device-actions">
+          <button id="pause-all" class="btn btn-warning">
+            <i class="fas fa-pause"></i> Jeda Semua
+          </button>
+          <button id="reset-history" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Reset Riwayat
+          </button>
+        </div>
+        <div id="devices" class="devices-grid"></div>
+
+        <!-- Statistik dan Riwayat -->
+        <div class="stats-container">
+          <div class="stats">
+            <div>
+              <span>Aktif:</span>
+              <span id="active-sessions">0</span>
+            </div>
+            <div>
+              <span>Pendapatan:</span>
+              <span id="total-income">Rp0</span>
+            </div>
+          </div>
+
+          <div id="ps-history-content"></div>
+        </div>
+      </div>
+
+      <!-- Tab Menu -->
+      <div id="food-menu" class="tab-content">
+        <div class="menu-container">
+          <div class="menu-section">
+            <h3>Makanan</h3>
+            <div class="menu-grid">
+              <div class="menu-item" data-price="1000" data-type="makanan">
+                <span>Makanan 1</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp1.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="2000" data-type="makanan">
+                <span>Makanan 2</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp2.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="3000" data-type="makanan">
+                <span>Makanan 3</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp3.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="5000" data-type="makanan">
+                <span>Makanan 5</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp5.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="7000" data-type="makanan">
+                <span>Makanan 7</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp7.000
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <h3>Minuman</h3>
+            <div class="menu-grid">
+              <div class="menu-item" data-price="1000" data-type="minuman">
+                <span>Minuman 1</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp1.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="2000" data-type="minuman">
+                <span>Minuman 2</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp2.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="4000" data-type="minuman">
+                <span>Minuman 4</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp4.000
+                </button>
+              </div>
+              <div class="menu-item" data-price="5000" data-type="minuman">
+                <span>Minuman 5</span>
+                <button class="btn btn-add">
+                  <i class="fas fa-plus"></i> Rp5.000
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table id="food-history-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Harga</th>
+              <th>Waktu</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Firebase & Script -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
